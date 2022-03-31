@@ -13,6 +13,7 @@ namespace UserRegex
                 Console.WriteLine("Enter 2 for Last Name:");
                 Console.WriteLine("Enter 3 for Email ID:");
                 Console.WriteLine("Enter 4 for Phone number:");
+                Console.WriteLine("Enter 5 for Password Rule 1:");
                 Console.WriteLine("Enter 0 to Exit:");
                 try
                 {
@@ -38,6 +39,11 @@ namespace UserRegex
                             Console.WriteLine("Enter a Phone number:");
                             string PhoneNumber = Console.ReadLine();
                             userRegistration.ValidPhoneNumber(PhoneNumber);
+                            break;
+                        case 5:
+                            Console.WriteLine("Enter a Password Rule 1:");
+                            string PasswordRule1 = Console.ReadLine();
+                            userRegistration.ValidPasswordRule1(PasswordRule1);
                             break;
                     }
                 }
