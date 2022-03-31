@@ -14,7 +14,8 @@ namespace UserRegex
         public Regex PhoneNumberRegex = new Regex(@"^[0-9]{2}\s[0-9]{10}$");
         public Regex PasswordRule1Regex = new Regex(@"^[A-Za-z]{8,}$");
         public Regex PasswordRule2Regex = new Regex(@"^(?=.*[A-Z])[A-Za-z]{7,}$");
-        public Regex PasswordRule3Regex = new Regex(@"^(?=.*[0-9])[A-Za-z0-9]{7,}$");
+        public Regex PasswordRule3Regex = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{6,}$");
+        public Regex PasswordRule4Regex = new Regex(@"^[\w\W]{1,}(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{5,}$");
         public void ValidFirstName(string FirstName)
         {
             Console.WriteLine("\nFirst Name:" + FirstName);
@@ -97,6 +98,18 @@ namespace UserRegex
             else
             {
                 Console.WriteLine("Password At least 1 Numeric number is invalid\n");
+            }
+        }
+        public void ValidPasswordRule4(string PasswordRule4)
+        {
+            Console.WriteLine("\nPassword At least 1 Special Character:" + PasswordRule4);
+            if (PasswordRule4Regex.IsMatch(PasswordRule4))
+            {
+                Console.WriteLine("Password At least 1 Special Character is valid\n");
+            }
+            else
+            {
+                Console.WriteLine("Password At least 1 Special Character is invalid\n");
             }
         }
     }
