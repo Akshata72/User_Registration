@@ -13,8 +13,9 @@ namespace UserRegex
                 Console.WriteLine("Enter 2 for Last Name:");
                 Console.WriteLine("Enter 3 for Email ID:");
                 Console.WriteLine("Enter 4 for Phone number:");
-                Console.WriteLine("Enter 5 for Password Rule 1:");
-                Console.WriteLine("Enter 6 for Password Rule 2:");
+                Console.WriteLine("Enter 5 for Password At least Minimum 8 Char:");
+                Console.WriteLine("Enter 6 for Password At least 1 Upper Case:");
+                Console.WriteLine("Enter 7 for Password At least 1 Numeric number:");
                 Console.WriteLine("Enter 0 to Exit:");
                 try
                 {
@@ -42,14 +43,19 @@ namespace UserRegex
                             userRegistration.ValidPhoneNumber(PhoneNumber);
                             break;
                         case 5:
-                            Console.WriteLine("Enter a Password Rule 1:");
+                            Console.WriteLine("Enter a Password At least Minimum 8 Char:");
                             string PasswordRule1 = Console.ReadLine();
                             userRegistration.ValidPasswordRule1(PasswordRule1);
                             break;
                         case 6:
-                            Console.WriteLine("Enter a Password Rule 2:");
+                            Console.WriteLine("Enter a Password At least 1 Upper Case:");
                             string PasswordRule2 = Console.ReadLine();
                             userRegistration.ValidPasswordRule2(PasswordRule2);
+                            break;
+                        case 7:
+                            Console.WriteLine("Enter a Password At least 1 Numeric number:");
+                            string PasswordRule3 = Console.ReadLine();
+                            userRegistration.ValidPasswordRule3(PasswordRule3);
                             break;
                     }
                 }
