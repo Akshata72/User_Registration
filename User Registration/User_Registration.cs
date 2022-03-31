@@ -76,7 +76,7 @@ namespace UserRegex
         }
         public void ValidPasswordRule2(string PasswordRule2)
         {
-            Console.WriteLine("\nPassword Rule 1:" + PasswordRule2);
+            Console.WriteLine("\nPassword Rule 2:" + PasswordRule2);
             if (PasswordRule2Regex.IsMatch(PasswordRule2))
             {
                 Console.WriteLine("Password Rule 2 is valid\n");
