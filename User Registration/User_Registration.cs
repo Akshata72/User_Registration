@@ -16,6 +16,7 @@ namespace UserRegex
         public Regex PasswordRule2Regex = new Regex(@"^(?=.*[A-Z])[A-Za-z]{7,}$");
         public Regex PasswordRule3Regex = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{6,}$");
         public Regex PasswordRule4Regex = new Regex(@"^[\w\W]{1,}(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{5,}$");
+        public Regex CheckEmailIDRegex = new Regex(@"^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$");
         public void ValidFirstName(string FirstName)
         {
             Console.WriteLine("\nFirst Name:" + FirstName);
@@ -110,6 +111,18 @@ namespace UserRegex
             else
             {
                 Console.WriteLine("Password At least 1 Special Character is invalid\n");
+            }
+        }
+        public void ValidCheckEmailID(string CheckEmailID)
+        {
+            Console.WriteLine("\nEmailID:" + CheckEmailID);
+            if (CheckEmailIDRegex.IsMatch(CheckEmailID))
+            {
+                Console.WriteLine("EmailID is valid\n");
+            }
+            else
+            {
+                Console.WriteLine("EmailID is invalid\n");
             }
         }
     }

@@ -17,6 +17,7 @@ namespace UserRegex
                 Console.WriteLine("Enter 6 for Password At least 1 Upper Case:");
                 Console.WriteLine("Enter 7 for Password At least 1 Numeric number:");
                 Console.WriteLine("Enter 8 for Password At least 1 Special Character:");
+                Console.WriteLine("Enter 9 for Email ID:");
                 Console.WriteLine("Enter 0 to Exit:");
                 try
                 {
@@ -62,6 +63,11 @@ namespace UserRegex
                             Console.WriteLine("Enter a Password At least 1 Special Character:");
                             string PasswordRule4 = Console.ReadLine();
                             userRegistration.ValidPasswordRule4(PasswordRule4);
+                            break;
+                        case 9:
+                            Console.WriteLine("Enter a Email ID:");
+                            string CheckEmailID = Console.ReadLine();
+                            userRegistration.ValidCheckEmailID(CheckEmailID);
                             break;
                     }
                 }
