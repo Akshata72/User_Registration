@@ -11,6 +11,7 @@ namespace UserRegex
             {
                 Console.WriteLine("Enter 1 for First Name:");
                 Console.WriteLine("Enter 2 for Last Name:");
+                Console.WriteLine("Enter 3 for Email ID:");
                 Console.WriteLine("Enter 0 to Exit:");
                 try
                 {
@@ -23,9 +24,14 @@ namespace UserRegex
                             userRegistration.ValidFirstName(FirstName);
                             break;
                         case 2:
-                            Console.WriteLine("Enter a First name:");
+                            Console.WriteLine("Enter a Last name:");
                             string LastName = Console.ReadLine();
                             userRegistration.ValidLastName(LastName);
+                            break;
+                        case 3:
+                            Console.WriteLine("Enter a Email ID:");
+                            string EmailID = Console.ReadLine();
+                            userRegistration.ValidEmailID(EmailID);
                             break;
                     }
                 }
