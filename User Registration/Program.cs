@@ -14,6 +14,7 @@ namespace UserRegex
                 Console.WriteLine("Enter 3 for Email ID:");
                 Console.WriteLine("Enter 4 for Phone number:");
                 Console.WriteLine("Enter 5 for Password Rule 1:");
+                Console.WriteLine("Enter 6 for Password Rule 2:");
                 Console.WriteLine("Enter 0 to Exit:");
                 try
                 {
@@ -44,6 +45,11 @@ namespace UserRegex
                             Console.WriteLine("Enter a Password Rule 1:");
                             string PasswordRule1 = Console.ReadLine();
                             userRegistration.ValidPasswordRule1(PasswordRule1);
+                            break;
+                        case 6:
+                            Console.WriteLine("Enter a Password Rule 2:");
+                            string PasswordRule2 = Console.ReadLine();
+                            userRegistration.ValidPasswordRule2(PasswordRule2);
                             break;
                     }
                 }
