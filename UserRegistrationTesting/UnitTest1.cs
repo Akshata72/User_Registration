@@ -43,11 +43,18 @@ namespace UserRegex
             Assert.AreEqual("Password At least 1 Special Character is valid", result);
         }
         
-        [Test]
-        public void Given_Email_When_valid_ShouldReturn_Valid() 
+        [TestCase("abc-100@yahoo.com")]
+        [TestCase("xyz-880@gmail.com")]
+        public void Given_Email_When_valid_ShouldReturn_Valid(string PatternEmailID)
         {
-            string result = userRegistration.ValidCheckEmailID("abc-100@yahoo.com");
-            Assert.AreEqual("EmailID is valid", result);
+            try
+            {
+                string actual = userRegistration.ValidCheckEmailID(PatternEmailID);
+            }
+            catch (UserRegistrationCustomException exception)
+            {
+                Assert.AreEqual("EmailID is valid", exception.Message);
+            }
         }
          
     }
