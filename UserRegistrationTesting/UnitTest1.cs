@@ -6,12 +6,14 @@ namespace UserRegex
     {
         UserRegistration userRegistration;
         InvalidUserRegistration invalidUserRegistration;
+        UserRegistrationLambda userRegistrationLambda;
 
         [SetUp]
         public void Setup()
         {
             userRegistration = new UserRegistration();
             invalidUserRegistration = new InvalidUserRegistration();
+            userRegistrationLambda = new UserRegistrationLambda();
         }
         [Test]
         public void Given_FirstName_When_Valid_shouldReturn_Valid()
@@ -64,6 +66,7 @@ namespace UserRegex
             try
             {
                 string actual = invalidUserRegistration.InvalidFirstName(PatternFirstName);
+                string actual_ = userRegistrationLambda.FirstNameLambda(PatternFirstName);
             }
             catch (UserRegistrationCustomException exception)
             {
@@ -76,6 +79,7 @@ namespace UserRegex
             try
             {
                 string actual = invalidUserRegistration.InvalidLastName(PatternLastName);
+                string actual_ = userRegistrationLambda.LastNameLambda(PatternLastName);
             }
             catch (UserRegistrationCustomException exception)
             {
@@ -90,6 +94,7 @@ namespace UserRegex
             try
             {
                 string actual = invalidUserRegistration.InvalidEmailID(PatternEmailID);
+                string actual_ = userRegistrationLambda.EmailIDLambda(PatternEmailID);
             }
             catch (UserRegistrationCustomException exception)
             {
@@ -104,6 +109,7 @@ namespace UserRegex
             try
             {
                 string actual = invalidUserRegistration.InvalidMobileNumber(PatternMobileNumber);
+                string actual_ = userRegistrationLambda.MobileNumberLambda(PatternMobileNumber);
             }
             catch (UserRegistrationCustomException exception)
             {
@@ -117,6 +123,7 @@ namespace UserRegex
             try
             {
                 string actual = invalidUserRegistration.InvalidPassword(PatternPassword);
+                string actual_ = userRegistrationLambda.PasswordLambda(PatternPassword);
             }
             catch (UserRegistrationCustomException exception)
             {
