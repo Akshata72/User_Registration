@@ -8,122 +8,86 @@ namespace UserRegex
 {
     public class UserRegistration
     {
-        public Regex FirstNameRegex = new Regex(@"^[A-Za-z]{2,}$");
-        public Regex LastNameRegex = new Regex(@"^[A-Za-z]{2,}$");
-        public Regex EmailIDRegex = new Regex(@"^[A-Za-z]+([.+-][A-Za-z0-9]+)*@[A-Za-z0-9]+.[A-Za-z]([.][A-Za-z]{2,})?$");
+        public Regex FirstNameRegex = new Regex(@"^[A-Z]{1,}[A-Za-z]{2,}$");
+        public Regex LastNameRegex = new Regex(@"^[A-Z]{1,}[A-Za-z]{2,}$");
+        public Regex EmailIDRegex = new Regex(@"^[a-z]{3,}([.]{1}[a-z]{3,})?@bl.co([.]{1}[a-z]{2})?$");
         public Regex PhoneNumberRegex = new Regex(@"^[0-9]{2}\s[0-9]{10}$");
         public Regex PasswordRule1Regex = new Regex(@"^[A-Za-z]{8,}$");
-        public Regex PasswordRule2Regex = new Regex(@"^(?=.*[A-Z])[A-Za-z]{7,}$");
-        public Regex PasswordRule3Regex = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{6,}$");
-        public Regex PasswordRule4Regex = new Regex(@"^[\w\W]{1,}(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{5,}$");
+        public Regex PasswordRule2Regex = new Regex(@"^(?=.*[A-Z]{1,})[A-Za-z]{7,}$");
+        public Regex PasswordRule3Regex = new Regex(@"^(?=.*[A-Z]{1,})(?=.*[0-9]{1,})[A-Za-z0-9]{6,}$");
+        public Regex PasswordRule4Regex = new Regex(@"^[\w\W]{1,}(?=.*[A-Z]{1,})(?=.*[0-9]{1,})[A-Za-z0-9]{5,}$");
         public Regex CheckEmailIDRegex = new Regex(@"^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$");
-        public void ValidFirstName(string FirstName)
+        public string ValidFirstName(string FirstName)
         {
             Console.WriteLine("\nFirst Name:" + FirstName);
             if (FirstNameRegex.IsMatch(FirstName))
-            {
-                Console.WriteLine("First Name is valid\n");
-            }
+                return "First Name is valid";
             else
-            {
-                Console.WriteLine("First Name is invalid\n");
-            }
+            return "First Name is invalid";
         }
-        public void ValidLastName(string LastName)
+        public string ValidLastName(string LastName)
         {
             Console.WriteLine("\nLast Name:" + LastName);
             if (LastNameRegex.IsMatch(LastName))
-            {
-                Console.WriteLine("Last Name is valid\n");
-            }
+                return "Last Name is valid";
             else
-            {
-                Console.WriteLine("Last Name is invalid\n");
-            }
+                return "Last Name is invalid";
         }
-        public void ValidEmailID(string EmailID)
+        public string ValidEmailID(string EmailID)
         {
             Console.WriteLine("\nEmailID:" + EmailID);
             if (EmailIDRegex.IsMatch(EmailID))
-            {
-                Console.WriteLine("EmailID is valid\n");
-            }
+                return "EmailID is valid";
             else
-            {
-                Console.WriteLine("EmailID is invalid\n");
-            }
+                return "EmailID is invalid";
         }
-        public void ValidPhoneNumber(string PhoneNumber)
+        public string ValidPhoneNumber(string PhoneNumber)
         {
             Console.WriteLine("\nPhone Number:" + PhoneNumber);
             if (PhoneNumberRegex.IsMatch(PhoneNumber))
-            {
-                Console.WriteLine("Phone Number is valid\n");
-            }
+                return "Phone Number is valid";
             else
-            {
-                Console.WriteLine("Phone Number is invalid\n");
-            }
+                return "Phone Number is invalid";
         }
-        public void ValidPasswordRule1(string PasswordRule1)
+        public string ValidPasswordRule1(string PasswordRule1)
         {
             Console.WriteLine("\nPassword At least Minimum 8 Char:" + PasswordRule1);
             if (PasswordRule1Regex.IsMatch(PasswordRule1))
-            {
-                Console.WriteLine("Password At least Minimum 8 Char is valid\n");
-            }
+                return "Password At least Minimum 8 Char is valid";
             else
-            {
-                Console.WriteLine("Password At least Minimum 8 Char is invalid\n");
-            }
+                return "Password At least Minimum 8 Char is invalid";
         }
-        public void ValidPasswordRule2(string PasswordRule2)
+        public string ValidPasswordRule2(string PasswordRule2)
         {
             Console.WriteLine("\nPassword At least 1 Upper Case:" + PasswordRule2);
             if (PasswordRule2Regex.IsMatch(PasswordRule2))
-            {
-                Console.WriteLine("Password At least 1 Upper Case is valid\n");
-            }
+                return "Password At least 1 Upper Case is valid";
             else
-            {
-                Console.WriteLine("Password At least 1 Upper Case is invalid\n");
-            }
+                return "Password At least 1 Upper Case is invalid";
         }
-        public void ValidPasswordRule3(string PasswordRule3)
+        public string ValidPasswordRule3(string PasswordRule3)
         {
             Console.WriteLine("\nPassword At least 1 Numeric number:" + PasswordRule3);
             if (PasswordRule3Regex.IsMatch(PasswordRule3))
-            {
-                Console.WriteLine("Password At least 1 Numeric number is valid\n");
-            }
+                return "Password At least 1 Numeric number is valid";
             else
-            {
-                Console.WriteLine("Password At least 1 Numeric number is invalid\n");
-            }
+                return "Password At least 1 Numeric number is invalid";
         }
-        public void ValidPasswordRule4(string PasswordRule4)
+        public string ValidPasswordRule4(string PasswordRule4)
         {
             Console.WriteLine("\nPassword At least 1 Special Character:" + PasswordRule4);
             if (PasswordRule4Regex.IsMatch(PasswordRule4))
-            {
-                Console.WriteLine("Password At least 1 Special Character is valid\n");
-            }
+                return "Password At least 1 Special Character is valid";
             else
-            {
-                Console.WriteLine("Password At least 1 Special Character is invalid\n");
-            }
+                return "Password At least 1 Special Character is invalid";
         }
-        public void ValidCheckEmailID(string CheckEmailID)
+        public string ValidCheckEmailID(string CheckEmailID)
         {
             Console.WriteLine("\nEmailID:" + CheckEmailID);
             if (CheckEmailIDRegex.IsMatch(CheckEmailID))
-            {
-                Console.WriteLine("EmailID is valid\n");
-            }
+                return "EmailID is valid";
             else
-            {
-                Console.WriteLine("EmailID is invalid\n");
-            }
+                return "EmailID is invalid";
         }
     }
 }
