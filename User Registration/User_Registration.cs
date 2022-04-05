@@ -81,10 +81,10 @@ namespace UserRegex
             else
                 return "Password At least 1 Special Character is invalid";
         }
-        public string ValidCheckEmailID(string CheckEmailID)
+        public string ValidCheckEmailID(string EmailID)
         {
-            Console.WriteLine("\nEmailID:" + CheckEmailID);
-            if (CheckEmailIDRegex.IsMatch(CheckEmailID))
+            Console.WriteLine("\nEmailID:" + EmailID);
+            if (CheckEmailIDRegex.IsMatch(EmailID))
                 return "EmailID is valid";
             else
                 return "EmailID is invalid";

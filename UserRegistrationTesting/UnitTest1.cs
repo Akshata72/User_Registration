@@ -42,7 +42,13 @@ namespace UserRegex
             string result = userRegistration.ValidPasswordRule4("@Akshata8");
             Assert.AreEqual("Password At least 1 Special Character is valid", result);
         }
-
-       
+        
+        [Test]
+        public void Given_Email_When_valid_ShouldReturn_Valid() 
+        {
+            string result = userRegistration.ValidCheckEmailID("abc-100@yahoo.com");
+            Assert.AreEqual("EmailID is valid", result);
+        }
+         
     }
 }
